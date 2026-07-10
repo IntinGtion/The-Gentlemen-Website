@@ -1,0 +1,127 @@
+{
+  "updated": "2026-02-20",
+  "regular": [
+    {
+      "name": "Area-M",
+      "location": "Koblenz",
+      "country": "DE",
+      "type": "Outdoor",
+      "tags": ["Woodland", "Bunker"],
+      "oneLiner": "Outdoor-Field mit Bunkerstraßen und Wald-Abschnitten.",
+      "verdict": "Unser Standard-Field: abwechslungsreich, fair und ideal für Teamplay.",
+      "pros": [
+        "Gute Mischung aus Wald und Deckungen",
+        "Lässt sich taktisch spielen (Push & Flank)",
+        "Meist angenehme Stimmung auf dem Feld"
+      ],
+      "cons": [
+        "Je nach Wetter sehr matschig",
+        "Bei viel Betrieb können bestimmte Bereiche schnell überlaufen"
+      ],
+      "report": [
+        "Area-M ist für uns das Feld, auf dem wir am häufigsten unterwegs sind. Du hast hier eine solide Mischung aus Woodland und gebauten Deckungsstrukturen, wodurch sich sowohl dynamisches Pushen als auch ruhigeres Teamplay lohnt.",
+        "Besonders die Bunker-/Deckungsstraßen sorgen dafür, dass man nicht nur blind durch den Wald rennt, sondern echte Linien und Flanken spielen kann. Je nach Wetter kann es aber auch mal sehr schlammig werden – festes Schuhwerk zahlt sich aus."
+      ],
+      "url": "https://www.airsoft-koblenz.de/"
+    },
+    {
+      "name": "Unit 13",
+      "location": "Niederlande",
+      "country": "NL",
+      "type": "Indoor",
+      "tags": ["CQB", "Speed"],
+      "oneLiner": "Schnelles CQB in starker Atmosphäre.",
+      "verdict": "Richtig starkes CQB-Setting – schnell, intensiv und atmosphärisch.",
+      "pros": [
+        "Sehr dichtes CQB-Layout mit vielen Winkeln",
+        "Hohe Intensität, kurze Wege, schnelle Runden",
+        "Stimmiges Setting / Atmosphäre"
+      ],
+      "cons": [
+        "Kann laut und hektisch werden",
+        "Für reine Woodland-Spieler evtl. ungewohnt"
+      ],
+      "report": [
+        "Unit 13 ist für uns das Gegenteil vom klassischen Woodland: eng, schnell und sehr direkt. Wenn du CQB magst und schnelle Entscheidungen willst, bist du hier genau richtig.",
+        "Durch die kurzen Distanzen ist Safety natürlich super wichtig, und man merkt schnell, dass man hier eher in kurzen, intensiven Phasen spielt. Für uns ist das eine richtig gute Abwechslung, wenn man mal Bock auf Tempo hat."
+      ],
+      "url": "https://unit13.eu/de/"
+    },
+    {
+      "name": "Area 51",
+      "location": "Bad Breisig",
+      "country": "DE",
+      "type": "Outdoor",
+      "tags": ["Missions", "Teamplay"],
+      "oneLiner": "Abwechslungsreiche Modi – je nach Orga auch mal sehr voll.",
+      "verdict": "Potenzial ist da – aber die Orga steht und fällt mit dem Spieltag.",
+      "pros": [
+        "Viele Spielmodi / Missionen möglich",
+        "Stimmung kann richtig gut sein, wenn’s passt",
+        "Gut für gemischte Teams"
+      ],
+      "cons": [
+        "Teilweise fragwürdige Orga-Entscheidungen",
+        "Bei hoher Teilnehmerzahl kann es sehr voll wirken",
+        "Teamverteilung kann den Spieltag stark beeinflussen"
+      ],
+      "report": [
+        "Wir waren bisher zweimal auf der Area 51. Beim ersten Mal war die Stimmung super: abwechslungsreiche Modi und insgesamt ein richtig guter Spieltag.",
+        "Beim zweiten Mal war die Erfahrung deutlich schlechter – vor allem durch Orga-Entscheidungen und eine sehr einseitige Teamverteilung. Trotzdem: Das Feld an sich hat gute Ansätze, daher geben wir dem nochmal eine Chance."
+      ],
+      "url": "https://www.area51-paintball.de/airsoft.html"
+    },
+    {
+      "name": "Event Operation Beer Rebellion",
+      "location": "Tschechien",
+      "country": "CZ",
+      "type": "Outdoor",
+      "tags": ["BIGGAME", "Woodland", "Teamplay"],
+      "oneLiner": "Ranche Vranov in Tschechien - das Zuhause der ehemaligen Bierzone und jetzt der Operation Beer Rebellion.",
+      "url": "https://www.beerzone.de/"
+    }
+  ],
+  "visited": [
+    {
+      "name": "Bärenkopf",
+      "location": "Frankreich",
+      "country": "FR",
+      "type": "Fort",
+      "tags": ["Setting", "Outdoor"],
+      "oneLiner": "Einzigartiges Fort-Setting – leider nicht um die Ecke.",
+      "verdict": "Einmaliges Fort-Feeling – für ein Special-Event absolut top.",
+      "pros": [
+        "Einzigartiges Fort-/Gebäude-Setting",
+        "Sehr viele spielbare Bereiche",
+        "Mega für Atmos und Fotos"
+      ],
+      "cons": [
+        "Anreise ist für uns deutlich länger",
+        "Man plant es eher als Event statt als Standard-Field"
+      ],
+      "report": [
+        "Der Bärenkopf ist für uns ein Highlight, weil das Setting einfach anders ist als alles, was man sonst so kennt. Fort, Gänge, Winkel – das fühlt sich direkt nach Event an.",
+        "Durch die Anreise ist es für uns eher etwas, das man gezielt plant. Wenn man aber Bock auf ein besonderes Wochenende und eine richtig starke Atmosphäre hat, lohnt sich das definitiv."
+      ],
+      "url": "https://airsoftgemeinschaft-bodensee.de/EVENTS/OP-BLACK-FORTRESS/SPIELGELAeNDE/"
+    },
+    {
+      "name": "Battleground Polen",
+      "location": "Polen",
+      "country": "PL",
+      "type": "Outdoor",
+      "tags": ["BIGGAME", "Woodland", "Gebäude-Bunker"],
+      "oneLiner": "Sehr cooles Spielfeld und Heimat einiger Events wie z.B. Thunderstrike oder World of Conflict",
+      "url": "https://battleground.de/"
+    }
+    ,
+    {
+      "name": "The Cloudmaker",
+      "location": "Deutschland - Meppen",
+      "country": "DE",
+      "type": "CQB",
+      "tags": ["Alte Farbik"],
+      "url": "https://strohhutcompany.de/"
+    }
+  ]
+}

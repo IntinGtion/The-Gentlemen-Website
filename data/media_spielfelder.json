@@ -1,0 +1,13 @@
+{
+  "rotationSeconds": 10,
+  "randomize": true,
+  "images": [
+    { "src": "resources/fields/AirsoftparkAachen.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/Area51BadBreisig.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/AreaMLogo.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/AreaMMap.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/Baerenkopf.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/BearenkopfLogo.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/fields/Unit13.webp", "alt": "The Gentlemen – Impression" }
+  ]
+}

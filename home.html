@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Gentlemen – Start</title>
+    <meta name="description" content="The Gentlemen. Fairplay, Teamplay und Spaß am Spiel – ohne unnötigen Drill." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+
+    <link rel="stylesheet" href="resources/style.css" />
+    <link rel="icon" href="resources/brand/badge.png" type="image/png" />
+
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="color-scheme" content="dark" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#content">Zum Inhalt springen</a>
+
+    <div class="shell">
+      <div class="left-pane">
+        <header class="topbar">
+          <a class="brand brand--centered" href="home.html" aria-label="The Gentlemen – Start">
+            <div class="brand__row">
+              <div class="brand__text">
+                <div class="brand__title">The Gentlemen</div>
+                <div class="brand__subtitle">Airsoft Team</div>
+              </div>
+            </div>
+          </a>
+        </header>
+
+        <div class="left-scroll">
+          <nav class="tabs" aria-label="Hauptnavigation">
+            <a class="tab" aria-current="page" href="home.html"><span>Start</span></a>
+            <a class="tab" href="mitspielen.html"><span>The Gentlemen</span></a>
+            <a class="tab" href="about.html"><span>Mitglieder</span></a>
+            <a class="tab" href="fields.html"><span>Spielfelder</span></a>
+            <a class="tab" href="galerie.html"><span>Galerie</span></a>
+            <a class="tab" href="kontakt.html"><span>Kontakt</span></a>
+          </nav>
+
+          <div class="home-logo-wrap">
+            <img class="home-logo" src="resources/brand/badge.png" alt="The Gentlemen Logo" />
+          </div>
+
+          <main id="content" class="page">
+            <section class="block">
+              <h2>Nächster Spieltag</h2>
+              <div id="spieltagBlock" data-source="data/spieltag.json" style="margin-top: 12px;"></div>
+            </section>
+
+            <footer class="legal" aria-label="Rechtliches">
+              <span>© The Gentlemen</span>
+              <a href="impressum.html">Impressum</a>
+              <a href="datenschutz.html">Datenschutz</a>
+              <a href="https://intingtion.de" target="_blank" rel="noopener noreferrer">Design: IntinGtion</a>
+            </footer>
+          </main>
+        </div>
+      </div>
+
+      <aside class="right-pane" aria-label="Team Eindrücke">
+        <div class="slideshow" data-source="data/media.json">
+          <img class="slide slide--a" alt="" />
+          <img class="slide slide--b" alt="" />
+          <div class="slideshow__shade" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="resources/script.js" defer></script>
+  </body>
+</html>

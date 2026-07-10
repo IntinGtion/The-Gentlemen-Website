@@ -1,0 +1,242 @@
+{
+  "updated": "2026-02-20",
+  "members": [
+    {
+      "callsign": "Dschinni",
+      "subtitle": "Leader / Gründer",
+      "tags": [
+        "Stratege",
+        "Allround Engineer",
+        "Motivator"
+      ],
+      "photo": "resources/members/Cihan.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/dschinni_airsoft"
+        }
+      ],
+      "weapons": [
+        { "src": "resources/weapons/Cihan_MTW_1.jpg", "alt": "Wolverine MTW - Links" },
+        { "src": "resources/weapons/Cihan_MTW_2.jpg", "alt": "Wolverine MTW - Rechts" }
+      ],
+      "name": "Cihan",
+      "spielertag": "Dschinni",
+      "age": 34,
+      "airsoftYears": "April 2022",
+      "camo": "Marpat / Everglade",
+      "plateCarrier": "Taktische Weste Molle (Olive Green)",
+      "primary": "Wolverine MTW",
+      "backup": "VLC GLock 45 HPA Tap",
+      "gimmick": "Creeper, Tanto",
+      "bio": "Stratege, Allround Engineer, Motivator"
+    },
+    {
+      "callsign": "IntinGtion",
+      "subtitle": "Rein • In • Die • Olga",
+      "tags": [
+        "Push",
+        "Kamera",
+        "Fun"
+      ],
+      "photo": "resources/members/Chris.webp",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://intingtion.de/"
+        },
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/@intingtion"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/intingtion"
+        }
+      ],
+      "name": "Chris",
+      "spielertag": "IntinGtion",
+      "age": 32,
+      "airsoftYears": "seit 2024",
+      "camo": "ACP Tropic",
+      "plateCarrier": "",
+      "primary": "Wolverine MTW",
+      "backup": "Tokyo Marui DOR",
+      "gimmick": "Dumme Sprüche",
+      "bio": "YouTuber, Gelegenheitsspieler, Hauptsache Spaß am Spiel."
+    },
+    {
+      "callsign": "Speedy",
+      "subtitle": "Teamplay",
+      "tags": [
+        "Speed"
+      ],
+      "photo": "resources/members/Devran.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/the_kutoran"
+        }
+      ],
+      "name": "Devran",
+      "spielertag": "Speedy",
+      "age": 21,
+      "airsoftYears": "August 2022",
+      "camo": "Everglade / CAD",
+      "plateCarrier": "",
+      "primary": "Wolverine MTW",
+      "backup": "",
+      "gimmick": "Spitzhacke",
+      "bio": ""
+    },
+    {
+      "callsign": "Lucas",
+      "subtitle": "",
+      "photo": "resources/members/Lucas.webp",
+      "name": "Lucas",
+      "spielertag": "",
+      "age": 32,
+      "airsoftYears": "Seit 2021",
+      "camo": "OD Green/FDE",
+      "plateCarrier": "5.11 TacTec Plattenträger / Novritsch ASPC",
+      "primary": "Wolverine MTW 308 / SIG MCX",
+      "backup": "SSP 5 / AAP-01",
+      "gimmick": "",
+      "bio": "Bastler mit ASVZ-Suchtproblem, sportlicher, fairer Spieler"
+    },
+    {
+      "callsign": "Bashking",
+      "subtitle": "",
+      "tags": [
+        "Tactical Tugay"
+      ],
+      "photo": "resources/members/Tugay.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/bashking_airsoft/"
+        }
+      ],
+      "name": "Tugay",
+      "spielertag": "Bashking",
+      "age": 31,
+      "airsoftYears": "April 2025",
+      "camo": "Tiger Stripe",
+      "plateCarrier": "Invader Gear Mod Carrier Ranger Green",
+      "primary": "Wolverine MTW / TM AKM & AKX",
+      "backup": "AW Custom 1911 High Capa",
+      "gimmick": "Hiraishin Kunai"
+    },
+    {
+      "callsign": "The Hooligan",
+      "subtitle": "",
+      "photo": "resources/members/Paddi.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/paddi.the.hooligan"
+        }
+      ],
+      "name": "Paddi",
+      "spielertag": "The Hooligan",
+      "age": 36,
+      "airsoftYears": "Seit 2016",
+      "camo": "Flecktarn",
+      "plateCarrier": "Novritsch ASPC",
+      "primary": "Wolverine MTW",
+      "backup": "Tokyo Marui Goldmatch",
+      "gimmick": "",
+      "bio": "Immer weiter nach vorn!",
+      "videos": [
+        { "src": "resources/videos/Paddi_1.mp4", "alt": "Paddi – Gameplay" }
+      ]
+    },
+    {
+      "callsign": "XRay",
+      "subtitle": "",
+      "tags": [
+        "HPA Guru"
+      ],
+      "photo": "resources/members/Patric.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/_xray_one_"
+        }
+      ],
+      "name": "Patric",
+      "spielertag": "XRay",
+      "age": 46,
+      "airsoftYears": "Juni 2020",
+      "camo": "Multicam",
+      "plateCarrier": "Novritsch ASPC 1.2",
+      "primary": "Umbrella Armory EMAG",
+      "backup": "Glock 17",
+      "gimmick": "",
+      "bio": "Airsoft 4 Life"
+    },
+    {
+      "callsign": "MM",
+      "subtitle": "",
+      "photo": "resources/members/MM.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/marco_ssnake/"
+        }
+      ],
+      "name": "Marco",
+      "spielertag": "MM",
+      "age": 34,
+      "airsoftYears": "Seit 2017",
+      "camo": "Multicam / Woodland",
+      "plateCarrier": "Emerson Gear JPC PC & Battle Belt",
+      "primary": "Wolverine MTW / Arcturus AR15",
+      "backup": "Glock 17 Gen4 CO2"
+    },
+    {
+      "callsign": "Nico_OF",
+      "subtitle": "",
+      "tags": [
+        "Allrounder",
+        "Kameramann"
+      ],
+      "photo": "resources/members/Nico.webp",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/nico_onlyairsoft?igsh=MWxqMGpub3F4MWkzbw=="
+        }
+      ],
+      "name": "Nico",
+      "spielertag": "Nico_OF",
+      "age": 24,
+      "airsoftYears": "Seit Februar 2023",
+      "camo": "ACP / Kreuzotter",
+      "bio": "Kleiner Mann große Knifte",
+      "primary": "Wolverine MTW 10'' Billet",
+      "backup": "Army Armament Glock R17 Ripper"
+    },
+    {
+      "callsign": "Bug",
+      "subtitle": "",
+      "photo": "",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/lost_shutter.bug"
+        }
+      ],
+      "name": "Jonas",
+      "spielertag": "Bug",
+      "age": 24,
+      "airsoftYears": "August 2020",
+      "camo": "OD Green/Black ",
+      "plateCarrier": "Repro Agilite K-0",
+      "primary": "HPA Nova / E&L Aks 74n",
+      "backup": "AA R17 Ripper",
+      "gimmick": "Schmetterling",
+      "bio": "Abgelenkt und trotzdem da"
+    }    
+  ]
+}

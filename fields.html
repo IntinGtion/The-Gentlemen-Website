@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karte – The Gentlemen</title>
+    <meta name="description" content="Interaktive Karte der besuchten Airsoft-Spielfelder von The Gentlemen." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="resources/style.css" />
+    <link rel="stylesheet" href="css/fields.css" />
+    <link rel="icon" href="resources/brand/badge.png" type="image/png" />
+
+    <meta name="theme-color" content="#0c0e09" />
+    <meta name="color-scheme" content="dark" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#content">Zum Inhalt springen</a>
+
+    <div class="shell shell--fields">
+      <div class="left-pane">
+        <header class="topbar">
+          <a class="brand brand--centered" href="home.html" aria-label="The Gentlemen – Start">
+            <div class="brand__row">
+              <div class="brand__text">
+                <div class="brand__title">The Gentlemen</div>
+                <div class="brand__subtitle">Airsoft Team</div>
+              </div>
+            </div>
+          </a>
+        </header>
+
+        <div class="left-scroll">
+          <nav class="tabs" aria-label="Hauptnavigation">
+            <a class="tab" href="home.html"
+              ><span>Start</span></a
+            >
+            <a class="tab" href="mitspielen.html"
+              ><span>The Gentlemen</span></a
+            >
+            <a class="tab" href="about.html"
+              ><span>Mitglieder</span></a
+            >
+            <a class="tab" aria-current="page" href="fields.html"
+              ><span>Spielfelder</span></a
+            >
+            <a class="tab" href="galerie.html"
+              ><span>Galerie</span></a
+            >
+            <a class="tab" href="kontakt.html"
+              ><span>Kontakt</span></a
+            >
+          </nav>
+
+          <main id="content" class="page">
+            <section class="block">
+              <p class="kicker">Karte</p>
+              <h1>Besuchte Felder</h1>
+              <p class="muted">
+                Hier seht ihr, auf welchen Spielfeldern The Gentlemen bereits unterwegs waren.
+                Klickt auf einen Marker für mehr Infos zum Feld.
+              </p>
+            </section>
+
+            <footer class="legal" aria-label="Rechtliches">
+              <span>© The Gentlemen</span>
+              <a href="impressum.html">Impressum</a>
+              <a href="datenschutz.html">Datenschutz</a>
+              <a href="https://intingtion.de" target="_blank" rel="noopener noreferrer">Design: IntinGtion</a>
+            </footer>
+          </main>
+        </div>
+      </div>
+
+      <div class="right-pane">
+        <div class="right-scroll">
+          <div id="map" class="fields-map" aria-label="Interaktive Karte mit Airsoft-Feldern"></div>
+
+          <section class="block">
+            <h2>Regelmäßig</h2>
+            <p id="fieldsRegularStatus" class="muted" aria-live="polite"></p>
+            <div id="fieldsRegularGrid" class="grid" data-source="data/fields.json"></div>
+          </section>
+
+          <section class="block">
+            <h2>Schon besucht</h2>
+            <p id="fieldsVisitedStatus" class="muted" aria-live="polite"></p>
+            <div id="fieldsVisitedGrid" class="grid" data-source="data/fields.json"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-modal" id="field-modal" hidden>
+      <div class="field-modal__backdrop" data-close-modal></div>
+
+      <div
+        class="field-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="field-modal-title"
+      >
+        <button class="field-modal__close" type="button" data-close-modal aria-label="Schließen">
+          ✕
+        </button>
+
+        <div class="field-modal__media" id="field-modal-media"></div>
+
+        <div class="field-modal__content">
+          <p class="field-modal__status" id="field-modal-status"></p>
+          <h3 id="field-modal-title"></h3>
+          <p class="field-modal__location muted" id="field-modal-location"></p>
+          <p id="field-modal-description"></p>
+
+          <dl class="field-modal__meta" id="field-modal-meta"></dl>
+
+          <div class="field-modal__actions" id="field-modal-actions"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script src="js/fields-data.js"></script>
+    <script src="js/fields.js"></script>
+    <script src="resources/script.js" defer></script>
+  </body>
+</html>

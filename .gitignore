@@ -1,0 +1,13 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.claude/settings.local.json
+
+# temp / logs / backups
+*.log
+*.tmp
+*.bak
