@@ -576,6 +576,60 @@ h3 {
   color: rgba(255, 255, 255, 0.86);
 }
 
+.patch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .patch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.patch-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.patch-card__images {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.patch-card__img {
+  width: auto;
+  max-width: 110px;
+  max-height: 110px;
+  height: auto;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+}
+
+.patch-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--gold);
+}
+
+.patch-card__desc {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
 .pills--grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1749,4 +1803,80 @@ body.modal-open {
   /* Spielfeld-Header: Website-Button darf umbrechen */
   .modal--field .field__head{ flex-wrap: wrap; padding-right: 54px; }
   .modal--field .field__head [data-site]{ margin-left: 0; }
+}
+
+/* ---- Fliege-Lightbox ---- */
+.img-link {
+  appearance: none;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 150ms ease;
+}
+
+.img-link:hover {
+  opacity: 0.75;
+}
+
+#fliege-lightbox[hidden] {
+  display: none;
+}
+
+#fliege-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+}
+
+.fliege-lb__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.fliege-lb__dialog {
+  position: relative;
+  z-index: 1;
+  max-width: min(440px, calc(100% - 32px));
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.fliege-lb__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fliege-lb__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 150ms ease;
+  z-index: 2;
+}
+
+.fliege-lb__close:hover {
+  background: rgba(201, 162, 39, 0.18);
+}
 }

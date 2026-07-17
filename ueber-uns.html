@@ -31,7 +31,7 @@
         <header class="topbar">
           <a
             class="brand brand--centered"
-            href="home.html"
+            href="start.html"
             aria-label="The Gentlemen – Start"
           >
             <div class="brand__row">
@@ -45,18 +45,18 @@
 
         <div class="left-scroll">
           <nav class="tabs" aria-label="Hauptnavigation">
-            <a class="tab" href="home.html"
+            <a class="tab" href="start.html"
               ><span>Start</span></a
             >
-            <a class="tab" aria-current="page" href="mitspielen.html"
+            <a class="tab" aria-current="page" href="ueber-uns.html"
               ><span>The Gentlemen</span
               ></a
             >
-            <a class="tab" href="about.html"
+            <a class="tab" href="mitglieder.html"
               ><span>Mitglieder</span
               ></a
             >
-            <a class="tab" href="fields.html"
+            <a class="tab" href="spielfelder.html"
               ><span>Spielfelder</span
               ></a
             >
@@ -141,10 +141,57 @@
               Dann Sprich uns einfach auf dem Spielfeld an oder schreib uns über unseren kontakt.
             </p>
           </section>
+
+          <section class="block" id="erkennung">
+            <h2>So erkennt ihr uns</h2>
+            <p class="muted">Auf dem Feld erkennst du Mitglieder und Freunde von The Gentlemen an ihrem Patch – und feste Mitglieder zusätzlich an einer <button class="img-link" data-fliege>dunkelroten Fliege</button> an der Ausrüstung.</p>
+
+            <div class="patch-grid">
+              <div class="patch-card">
+                <img
+                  src="resources/brand/badge.png"
+                  alt="The Gentlemen Team-Patch"
+                  class="patch-card__img"
+                />
+                <h3 class="patch-card__title">Team-Mitglied</h3>
+                <p class="patch-card__desc muted">Feste Mitglieder tragen diesen Patch. Zusätzlich erkennst du sie an einer <button class="img-link" data-fliege>dunkelroten Fliege</button> an der Ausrüstung – unser gemeinsames Erkennungszeichen auf dem Feld.</p>
+              </div>
+
+              <div class="patch-card">
+                <img
+                  src="resources/brand/TheGentlemen_MERC_transparenter_Hintergrund.png"
+                  alt="The Gentlemen Mercenary-Patch"
+                  class="patch-card__img"
+                />
+                <h3 class="patch-card__title">Mercenary</h3>
+                <p class="patch-card__desc muted">Für Freunde und Bekannte, die regelmäßig mit uns spielen, aber kein festes Teammitglied sind. Sie teilen unsere Werte und gehören zu unserem erweiterten Kreis.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </aside>
     </div>
 
+    <div id="fliege-lightbox" hidden role="dialog" aria-modal="true" aria-label="Dunkelrote Fliege">
+      <div class="fliege-lb__backdrop"></div>
+      <div class="fliege-lb__dialog">
+        <button class="fliege-lb__close" aria-label="Schließen">&times;</button>
+        <img src="resources/brand/DunkelroteFliege.webp" alt="Dunkelrote Fliege – Erkennungszeichen der Team-Mitglieder" class="fliege-lb__img" />
+      </div>
+    </div>
+
     <script src="resources/script.js" defer></script>
+    <script>
+      (function () {
+        var lb = document.getElementById("fliege-lightbox");
+        if (!lb) return;
+        function openLb() { lb.hidden = false; document.body.classList.add("modal-open"); }
+        function closeLb() { lb.hidden = true; document.body.classList.remove("modal-open"); }
+        document.querySelectorAll("[data-fliege]").forEach(function (btn) { btn.addEventListener("click", openLb); });
+        lb.querySelector(".fliege-lb__backdrop").addEventListener("click", closeLb);
+        lb.querySelector(".fliege-lb__close").addEventListener("click", closeLb);
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) closeLb(); });
+      })();
+    </script>
   </body>
 </html>
