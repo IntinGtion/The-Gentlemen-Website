@@ -81,7 +81,7 @@ window.vulcanoFields = [
     description:
       "Ranche Vranov in Tschechien – Heimat der Operation Beer Rebellion. Big Game mit Outdoor-Woodland-Setting.",
     image: "resources/fields/Beerzone.webp",
-    website: "https://www.beerzone.de/",
+    website: "https://op-beer-rebellion.de/",
     notes: ""
   },
   {
