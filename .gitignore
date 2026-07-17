@@ -5,6 +5,7 @@ desktop.ini
 
 # Editor / IDE
 .vscode/
+.claude/
 
 # temp / logs / backups
 *.log

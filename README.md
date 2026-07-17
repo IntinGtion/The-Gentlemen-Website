@@ -1,58 +1,109 @@
-# The Gentlemen – Team Website (Split UI)
+# The Gentlemen – Team Website
 
-Diese Website ist absichtlich **ohne Frameworks** gebaut (nur HTML/CSS/JS).
+Offizielle Website des Airsoft-Teams **The Gentlemen**. Gebaut ohne Frameworks – reines HTML, CSS und vanilla JavaScript.
 
-**Design-Idee:**
-- **Startscreen (Gate):** Team‑Bild + pulsierendes The Gentlemen‑Logo („Klick mich“)
-- **Hauptlayout:** Links „Tabs“ (Navigation + Inhalte), rechts rotieren zufällige Bilder.
+**Live:** [the-gentlemen.de](https://the-gentlemen.de)
 
-## Struktur
+---
 
-- `index.html` → Startscreen (Gate)
-- `home.html` → eigentliche Startseite
-- weitere Seiten: `about.html`, `mitspielen.html`, `regeln.html`, `spielfelder.html`, `kontakt.html`
-- Rechtliches: `impressum.html`, `datenschutz.html`
+## Technik
+
+- Statisches HTML/CSS/JS – kein Framework, kein Build-Schritt
+- JSON-gesteuerte Inhalte (Mitglieder, Spielfelder, Galerie, Berichte)
+- Interaktive Karte via [Leaflet.js](https://leafletjs.com/)
+- Deployment: Git Push → GitHub → Plesk (automatisch via Webhook)
+
+---
+
+## Seitenstruktur
+
+| Datei | Inhalt |
+|---|---|
+| `index.html` | Splash-/Enter-Screen |
+| `start.html` | Startseite mit Slideshow |
+| `ueber-uns.html` | Team-Identität, Werte, Erkennungszeichen |
+| `mitglieder.html` | Mitgliederübersicht |
+| `spielfelder.html` | Interaktive Karte besuchter Felder |
+| `berichte.html` | Spieltagesberichte und Felderfahrungen |
+| `galerie.html` | Bildergalerie |
+| `kontakt.html` | Kontakt und Social Links |
+| `impressum.html` | Impressum |
+| `datenschutz.html` | Datenschutzerklärung |
+
+---
 
 ## Inhalte pflegen
 
-### Mitglieder
-- Datei: `data/team.json`
-- Pro Member ein Objekt unter `members`
-- `photo` ist optional. Wenn leer/null, wird automatisch ein Initialen‑Avatar angezeigt.
+### Mitglieder – `data/team.json`
 
-**Beispiel:**
 ```json
 {
-  "callsign": "Paddi",
-  "subtitle": "Flanken • Tempo • CQB",
-  "tags": ["CQB", "Tempo"],
-  "photo": "resources/members/paddi.jpg",
+  "callsign": "Spielertag",
+  "subtitle": "Kurzbeschreibung",
+  "tags": ["CQB", "Woodland"],
+  "photo": "resources/members/foto.webp",
   "links": [
-    { "label": "YouTube", "url": "https://…" }
+    { "label": "Instagram", "url": "https://..." }
   ]
 }
 ```
 
-### Spielfelder
-- Datei: `data/fields.json`
-- Listen: `regular` (regelmäßig) und `visited` (schon besucht)
+`photo` ist optional – ohne Foto wird automatisch ein Initialen-Avatar angezeigt.
 
-### Slideshow / Bilder rechts
-- Datei: `data/media.json`
-- Bilder liegen standardmäßig in `resources/team/` (Platzhalter‑SVGs).
-- Ersetze die Platzhalter durch echte Bilder (JPG/PNG/WebP) **mit gleichem Pfad** oder passe `data/media.json` an.
+### Spielfelder – `js/fields-data.js`
 
-## Lokales Testen
+Felder werden als JavaScript-Array in `window.vulcanoFields` gepflegt. Heimatstädte der Mitglieder stehen in `window.memberLocations`.
 
-⚠️ **Wichtig:** `fetch()` für JSON funktioniert in vielen Browsern nicht über `file://`.
+### Berichte – `data/berichte.json`
 
-Empfohlen:
-- VS Code Extension **Live Server**
-- oder im Projektordner:
-  - `python -m http.server 8000`
-  - dann im Browser öffnen: `http://localhost:8000/`
+```json
+{
+  "id": "eindeutiger-slug",
+  "titel": "Spieltag Area-M – Juli 2026",
+  "datum": "2026-07-12",
+  "feld": "Area M",
+  "typ": "spieltag",
+  "intro": "Kurzer Einstiegssatz für die Kartenvorschau.",
+  "absaetze": [
+    "Erster Absatz...",
+    "Zweiter Absatz..."
+  ],
+  "bilder": []
+}
+```
 
-## GitHub Pages
+`typ` ist entweder `spieltag` oder `feldbericht`. `bilder` ist optional (Array von Bildpfaden).
 
-Für GitHub Pages reicht es, das Repo zu pushen und Pages zu aktivieren.
-Die JSON-Dateien liegen im Repo und werden statisch ausgeliefert.
+### Galerie / Slideshow – `data/media.json`
+
+Bilder als WebP in `resources/team/slides/` ablegen und in `media.json` eintragen.
+
+---
+
+## Lokale Entwicklung
+
+Da `fetch()` über `file://` nicht funktioniert, wird ein lokaler Server benötigt:
+
+```bash
+# Python
+python -m http.server 8000
+
+# Node.js
+npx serve .
+```
+
+Dann im Browser: `http://localhost:8000`
+
+Oder die VS Code Extension **Live Server** verwenden.
+
+---
+
+## Deployment
+
+Jeder Push auf `master` wird automatisch auf [the-gentlemen.de](https://the-gentlemen.de) deployt:
+
+```
+git push origin master
+```
+
+Pipeline: **GitHub** → Webhook → **Plesk** → Live
