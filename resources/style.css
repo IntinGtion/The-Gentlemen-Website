@@ -1880,3 +1880,183 @@ body.modal-open {
   background: rgba(201, 162, 39, 0.18);
 }
 }
+
+/* ---- Berichte ---- */
+.berichte-list {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.bericht-card {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 8px;
+}
+
+.bericht-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+
+.bericht-card__typ {
+  color: var(--crimson);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bericht-card__datum {
+  color: var(--muted);
+}
+
+.bericht-card__titel {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bericht-card__feld {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.bericht-card__intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.bericht-card__button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold);
+  padding: 0;
+  justify-self: start;
+  transition: opacity 150ms ease;
+}
+
+.bericht-card__button:hover {
+  opacity: 0.75;
+}
+
+/* Bericht-Modal */
+#bericht-modal[hidden] {
+  display: none;
+}
+
+#bericht-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+
+.bericht-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.bericht-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(680px, calc(100% - 24px));
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.bericht-modal__topbar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0;
+}
+
+.bericht-modal__close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 150ms ease;
+}
+
+.bericht-modal__close:hover {
+  background: rgba(201, 162, 39, 0.18);
+}
+
+.bericht-modal__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 24px 28px;
+}
+
+.bericht-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+}
+
+.bericht-modal__typ {
+  color: var(--crimson);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bericht-modal__datum {
+  color: var(--muted);
+}
+
+.bericht-modal__feld {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+}
+
+.bericht-modal__body p {
+  margin: 0 0 1em;
+  line-height: 1.75;
+}
+
+.bericht-modal__body p:last-child {
+  margin-bottom: 0;
+}
+
+.bericht-modal__bilder {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.bericht-modal__bild {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+}

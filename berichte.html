@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Gentlemen – Start</title>
-    <meta name="description" content="The Gentlemen. Fairplay, Teamplay und Spaß am Spiel – ohne unnötigen Drill." />
+    <title>Berichte – The Gentlemen</title>
+    <meta name="description" content="Spieltagesberichte und Felderfahrungen von The Gentlemen Airsoft Team." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
   <body>
     <a class="skip-link" href="#content">Zum Inhalt springen</a>
 
-    <div class="shell">
+    <div class="shell shell--fields">
       <div class="left-pane">
         <header class="topbar">
           <a class="brand brand--centered" href="start.html" aria-label="The Gentlemen – Start">
@@ -35,23 +35,20 @@
 
         <div class="left-scroll">
           <nav class="tabs" aria-label="Hauptnavigation">
-            <a class="tab" aria-current="page" href="start.html"><span>Start</span></a>
+            <a class="tab" href="start.html"><span>Start</span></a>
             <a class="tab" href="ueber-uns.html"><span>The Gentlemen</span></a>
             <a class="tab" href="mitglieder.html"><span>Mitglieder</span></a>
             <a class="tab" href="spielfelder.html"><span>Spielfelder</span></a>
-            <a class="tab" href="berichte.html"><span>Berichte</span></a>
+            <a class="tab" aria-current="page" href="berichte.html"><span>Berichte</span></a>
             <a class="tab" href="galerie.html"><span>Galerie</span></a>
             <a class="tab" href="kontakt.html"><span>Kontakt</span></a>
           </nav>
 
-          <div class="home-logo-wrap">
-            <img class="home-logo" src="resources/brand/badge.png" alt="The Gentlemen Logo" />
-          </div>
-
           <main id="content" class="page">
             <section class="block">
-              <h2>Nächster Spieltag</h2>
-              <div id="spieltagBlock" data-source="data/spieltag.json" style="margin-top: 12px;"></div>
+              <p class="kicker">Aus dem Feld</p>
+              <h1>Berichte</h1>
+              <p class="muted">Spieltagesberichte, Felderfahrungen und Eindrücke von The Gentlemen.</p>
             </section>
 
             <footer class="legal" aria-label="Rechtliches">
@@ -64,15 +61,35 @@
         </div>
       </div>
 
-      <aside class="right-pane" aria-label="Team Eindrücke">
-        <div class="slideshow" data-source="data/media.json">
-          <img class="slide slide--a" alt="" />
-          <img class="slide slide--b" alt="" />
-          <div class="slideshow__shade" aria-hidden="true"></div>
+      <div class="right-pane">
+        <div class="right-scroll">
+          <div id="berichte-list" class="berichte-list">
+            <p class="muted" style="padding: 24px">Berichte werden geladen…</p>
+          </div>
         </div>
-      </aside>
+      </div>
     </div>
 
+    <div id="bericht-modal" hidden role="dialog" aria-modal="true" aria-labelledby="bericht-modal-titel">
+      <div class="bericht-modal__backdrop" data-close-bericht></div>
+      <div class="bericht-modal__dialog">
+        <div class="bericht-modal__topbar">
+          <button class="bericht-modal__close" type="button" data-close-bericht aria-label="Schließen">✕</button>
+        </div>
+        <div class="bericht-modal__content">
+          <p class="bericht-modal__meta">
+            <span class="bericht-modal__typ" id="bericht-modal-typ"></span>
+            <span class="bericht-modal__datum" id="bericht-modal-datum"></span>
+          </p>
+          <h2 id="bericht-modal-titel"></h2>
+          <p class="bericht-modal__feld muted" id="bericht-modal-feld"></p>
+          <div id="bericht-modal-body" class="bericht-modal__body"></div>
+          <div id="bericht-modal-bilder" class="bericht-modal__bilder"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/berichte.js" defer></script>
     <script src="resources/script.js" defer></script>
   </body>
 </html>
