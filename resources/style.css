@@ -141,14 +141,18 @@ h3 {
   min-height: 100dvh;
   display: grid;
   grid-template-columns: clamp(360px, 36vw, 560px) 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "left  right"
+    "legal right";
 }
 
 .left-pane {
   position: relative;
+  grid-area: left;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), transparent 40%),
     linear-gradient(180deg, var(--panel), var(--bg));
   border-right: 1px solid rgba(255, 255, 255, 0.08);
@@ -203,6 +207,7 @@ h3 {
 
 .right-pane {
   position: relative;
+  grid-area: right;
   z-index: 1;
   overflow: hidden;
   background: #0a0c10;
@@ -722,7 +727,7 @@ h3 {
   font-size: 13px;
 }
 
-/* ---------- Footer Links inside left pane ---------- */
+/* ---------- Footer Links (legal) ---------- */
 .legal {
   margin-top: 16px;
   padding-top: 14px;
@@ -732,6 +737,16 @@ h3 {
   gap: 12px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* When .legal is a direct shell child: place in left column */
+.shell > .legal {
+  grid-area: legal;
+  margin-top: 0;
+  padding: 14px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
 }
 
 .legal a {
@@ -867,6 +882,16 @@ h3 {
 @media (max-width: 980px) {
   .shell {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "left"
+      "right"
+      "legal";
+  }
+
+  .shell > .legal {
+    border-right: none;
+    padding: 14px 22px;
   }
 
   .right-pane {
