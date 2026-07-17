@@ -1,0 +1,327 @@
+/* Karte & Feldliste */
+
+.fields-map {
+  height: clamp(360px, 52vh, 580px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.fields-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Feldkarten in der Seitenleiste */
+.field-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+.field-card h3 {
+  margin: 0 0 4px;
+}
+
+.field-card__status {
+  margin: 0 0 4px;
+  color: var(--crimson);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.field-card__location {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.field-card__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.field-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Buttons */
+.field-card__button,
+.map-popup__button,
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+
+.field-card__button,
+.map-popup__button,
+.button--primary {
+  background: var(--gold);
+  color: #141410;
+}
+
+.field-card__button:hover,
+.map-popup__button:hover,
+.button--primary:hover {
+  opacity: 0.85;
+}
+
+/* Karten-Marker */
+.custom-pin {
+  display: grid;
+  place-items: center;
+}
+
+.custom-pin__dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border: 2px solid #141410;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.25);
+}
+
+.member-pin {
+  display: grid;
+  place-items: center;
+}
+
+.member-pin__dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #2e8bc0;
+  border: 2px solid #141410;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(46, 139, 192, 0.25);
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 28px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(14, 17, 12, 0.88);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.80);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-legend__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #141410;
+  flex-shrink: 0;
+}
+
+.map-legend__dot--field  { background: #c9a227; box-shadow: 0 0 0 3px rgba(201,162,39,0.25); }
+.map-legend__dot--member { background: #2e8bc0; box-shadow: 0 0 0 3px rgba(46,139,192,0.25); }
+
+/* Karten-Popup */
+.map-popup {
+  min-width: 180px;
+  font-family: inherit;
+}
+
+.map-popup__button {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+/* Leaflet-Override: Popup in dunkel halten */
+.leaflet-popup-content-wrapper {
+  background: #1a1e14;
+  color: #f2edd8;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.leaflet-popup-tip {
+  background: #1a1e14;
+}
+
+.leaflet-popup-content-wrapper a {
+  color: var(--gold-2);
+}
+
+/* Modal */
+.field-modal[hidden] {
+  display: none;
+}
+
+.field-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.field-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.field-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(880px, calc(100% - 24px));
+  margin: 5vh auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.field-modal__media {
+  min-height: 300px;
+  background: #0c0e09;
+}
+
+.field-modal__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.field-modal__content {
+  padding: 24px;
+  overflow: auto;
+}
+
+.field-modal__status {
+  margin: 0 0 8px;
+  color: var(--crimson);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field-modal__location {
+  color: var(--muted);
+}
+
+.field-modal__meta {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.field-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+}
+
+.field-meta-row dt {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.field-meta-row dd {
+  margin: 0;
+}
+
+.field-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.field-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 150ms ease;
+}
+
+.field-modal__close:hover {
+  background: rgba(201, 162, 39, 0.18);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .field-modal__dialog {
+    width: calc(100% - 16px);
+    margin: 2vh auto;
+    grid-template-columns: 1fr;
+    max-height: 96vh;
+  }
+
+  .field-modal__media {
+    min-height: 200px;
+  }
+
+  .field-modal__content {
+    padding: 16px;
+  }
+
+  .field-meta-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .field-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field-card__button {
+    width: 100%;
+    text-align: center;
+  }
+}

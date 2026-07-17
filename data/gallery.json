@@ -1,0 +1,294 @@
+{
+  "albums": [
+    {
+      "id": "gruppenbilder",
+      "title": "Gruppenbilder",
+      "items": [
+        {
+          "src": "resources/gallery/alben/gruppenbilder/Gruppenbild_1.webp",
+          "alt": "The Gentlemen – Gruppenbild",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/gruppenbilder/Gruppenbild_2.webp",
+          "alt": "The Gentlemen – Gruppenbild",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/gruppenbilder/Gruppenbild_3.webp",
+          "alt": "The Gentlemen – Gruppenbild",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/gruppenbilder/Gruppenbild_4.webp",
+          "alt": "The Gentlemen – Gruppenbild",
+          "meta": "Beispiel"
+        }
+      ]
+    },
+    {
+      "id": "momente",
+      "title": "Member & Momente",
+      "items": [
+        {
+          "src": "resources/gallery/alben/momente/Moment_1.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_2.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_3.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_4.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_5.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_6.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_7.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_8.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_9.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_10.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_11.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_12.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_13.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_14.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_15.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_16.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_17.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_18.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_19.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_20.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_21.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_22.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_23.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_24.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_25.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_26.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_27.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_28.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_29.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_30.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_31.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_32.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_33.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_34.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_35.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_36.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_37.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_38.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_39.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_40.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/momente/Moment_41.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        }
+      ]
+    },
+    {
+      "id": "obr2025",
+      "title": "OBR 2025",
+      "items": [
+        {
+          "src": "resources/gallery/alben/obr2025/OBR_1.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+        {
+          "src": "resources/gallery/alben/obr2025/OBR_2.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        }
+      ]
+    },
+    {
+      "id": "thunderstrike2025",
+      "title": "Thunderstrike 2025",
+      "items": [
+        {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_1.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+                {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_2.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+                {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_3.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+                {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_4.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+
+                {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_5.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        },
+                {
+          "src": "resources/gallery/alben/thunderstrike2025/Thunderstrike_6.webp",
+          "alt": "The Gentlemen – Moment",
+          "meta": "Beispiel"
+        }
+      ]
+    }
+  ]
+}
