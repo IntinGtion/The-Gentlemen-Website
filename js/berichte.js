@@ -27,7 +27,9 @@
     modalTitel.textContent = post.titel || "";
     modalFeld.textContent  = post.feld ? "Feld: " + post.feld : "";
 
-    modalBody.innerHTML = (post.absaetze || []).map(p => `<p>${p}</p>`).join("");
+    modalBody.innerHTML = (post.absaetze || []).map(function (p) {
+      return p.trimStart().startsWith("<") ? p : "<p>" + p + "</p>";
+    }).join("");
 
     modalBilder.innerHTML = "";
     (post.bilder || []).forEach(function (src) {
