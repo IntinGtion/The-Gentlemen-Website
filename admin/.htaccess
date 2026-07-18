@@ -1,0 +1,7 @@
+# Kein Directory-Listing
+Options -Indexes
+
+# config.php niemals direkt ausliefern
+<Files "config.php">
+    Require all denied
+</Files>

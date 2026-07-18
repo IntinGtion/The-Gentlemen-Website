@@ -14,3 +14,6 @@ desktop.ini
 
 # Originale vor Komprimierung
 resources/_backup_originals/
+
+# Admin-Konfiguration (enthält Token und Passwort-Hash – niemals einchecken)
+admin/config.php
