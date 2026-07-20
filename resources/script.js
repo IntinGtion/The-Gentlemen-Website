@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSpieltag();
   initMemberLinks();
   initNews();
+  initNewsButton();
 });
 
 async function initDynamicCards() {
@@ -206,6 +207,47 @@ async function initMemberLinks() {
   });
 
   container.appendChild(list);
+}
+
+async function initNewsButton() {
+  let neuigkeit;
+  try {
+    neuigkeit = await fetchJson("data/neuigkeit.json");
+  } catch {
+    return;
+  }
+
+  if (!neuigkeit || !neuigkeit.aktiv || !safeText(neuigkeit.titel)) return;
+
+  const btn = document.createElement("a");
+  btn.className = "news-fab";
+  btn.setAttribute("aria-label", "Neuigkeit anzeigen");
+
+  const onStartPage = !!document.getElementById("newsBlock");
+  btn.href = onStartPage ? "#newsBlock" : "start.html#newsBlock";
+
+  if (onStartPage) {
+    btn.addEventListener("click", (e) => {
+      const target = document.getElementById("newsBlock");
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  const img = document.createElement("img");
+  img.src = "resources/brand/badge.png";
+  img.alt = "";
+  img.className = "news-fab__logo";
+  btn.appendChild(img);
+
+  const label = document.createElement("span");
+  label.className = "news-fab__label";
+  label.textContent = "News";
+  btn.appendChild(label);
+
+  document.body.appendChild(btn);
 }
 
 async function initNews() {

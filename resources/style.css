@@ -561,6 +561,60 @@ h3 {
   background: rgba(226, 201, 126, 0.06);
 }
 
+/* ---------- News Floating Button ---------- */
+.news-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  animation: news-fab-float 3s ease-in-out infinite;
+}
+
+body.modal-open .news-fab {
+  display: none;
+}
+
+.news-fab__logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 162, 39, 0.55);
+  background: rgba(12, 14, 9, 0.92);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  padding: 5px;
+  object-fit: contain;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.news-fab:hover .news-fab__logo,
+.news-fab:focus-visible .news-fab__logo {
+  transform: scale(1.1);
+  border-color: rgba(201, 162, 39, 0.9);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.65), 0 0 0 4px rgba(201, 162, 39, 0.18);
+}
+
+.news-fab__label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 201, 126, 0.95);
+  background: rgba(12, 14, 9, 0.88);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+}
+
+@keyframes news-fab-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
 /* ---------- Neuigkeiten (Start-Seite) ---------- */
 .news-list {
   display: flex;
@@ -1074,6 +1128,10 @@ h3 {
   }
 
   .splash__pulse {
+    animation: none;
+  }
+
+  .news-fab {
     animation: none;
   }
 
