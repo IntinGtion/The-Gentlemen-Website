@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMemberLinks();
   initNews();
   initNewsButton();
+  initMobileNav();
 });
 
 async function initDynamicCards() {
@@ -207,6 +208,40 @@ async function initMemberLinks() {
   });
 
   container.appendChild(list);
+}
+
+function initMobileNav() {
+  const nav = document.querySelector("nav.tabs");
+  const topbar = document.querySelector(".topbar");
+  if (!nav || !topbar) return;
+
+  nav.id = nav.id || "mainNav";
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "nav-toggle";
+  btn.setAttribute("aria-label", "Navigation öffnen");
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", "mainNav");
+  btn.innerHTML = "<span></span><span></span><span></span>";
+  topbar.appendChild(btn);
+
+  function setOpen(open) {
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Navigation schließen" : "Navigation öffnen");
+    nav.classList.toggle("is-open", open);
+  }
+
+  btn.addEventListener("click", () => {
+    setOpen(btn.getAttribute("aria-expanded") !== "true");
+  });
+
+  // Auto-close when a link is clicked (navigating away on mobile)
+  nav.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 980px)").matches) setOpen(false);
+    });
+  });
 }
 
 async function initNewsButton() {
