@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
   initSpieltag();
   initMemberLinks();
+  initNews();
 });
 
 async function initDynamicCards() {
@@ -205,6 +206,63 @@ async function initMemberLinks() {
   });
 
   container.appendChild(list);
+}
+
+async function initNews() {
+  const block = document.getElementById("newsBlock");
+  if (!block) return;
+
+  const src = block.getAttribute("data-source") || "data/berichte.json";
+
+  let posts;
+  try {
+    posts = await fetchJson(src);
+  } catch {
+    return;
+  }
+
+  if (!Array.isArray(posts) || !posts.length) return;
+
+  posts.slice(0, 3).forEach((post) => {
+    const title = safeText(post && post.titel) || "Spielbericht";
+    const datum = safeText(post && post.datum);
+    const intro = safeText(post && post.intro);
+    const feld = safeText(post && post.feld);
+
+    const a = document.createElement("a");
+    a.className = "news-item";
+    a.href = "berichte.html";
+
+    const meta = document.createElement("span");
+    meta.className = "news-item__meta muted";
+
+    const parts = [];
+    if (datum) {
+      try {
+        const d = new Date(datum);
+        parts.push(isNaN(d) ? datum : d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" }));
+      } catch {
+        parts.push(datum);
+      }
+    }
+    if (feld) parts.push(feld);
+    meta.textContent = parts.join(" · ");
+    a.appendChild(meta);
+
+    const titleEl = document.createElement("span");
+    titleEl.className = "news-item__title";
+    titleEl.textContent = title;
+    a.appendChild(titleEl);
+
+    if (intro) {
+      const introEl = document.createElement("span");
+      introEl.className = "news-item__intro muted";
+      introEl.textContent = intro;
+      a.appendChild(introEl);
+    }
+
+    block.appendChild(a);
+  });
 }
 
 async function initSlideshow() {
@@ -435,6 +493,16 @@ function renderMembers(container, members) {
     });
 
     container.appendChild(article);
+  });
+
+  // Equalize all card heights so the grid looks uniform
+  document.fonts.ready.then(() => {
+    if (window.matchMedia("(max-width: 520px)").matches) return;
+    const cards = Array.from(container.querySelectorAll(".card"));
+    if (cards.length < 2) return;
+    cards.forEach((c) => { c.style.minHeight = ""; });
+    const maxH = cards.reduce((m, c) => Math.max(m, c.offsetHeight), 0);
+    if (maxH > 0) cards.forEach((c) => { c.style.minHeight = maxH + "px"; });
   });
 }
 
