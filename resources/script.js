@@ -212,15 +212,58 @@ async function initNews() {
   const block = document.getElementById("newsBlock");
   if (!block) return;
 
-  const src = block.getAttribute("data-source") || "data/berichte.json";
+  const berichteSrc = block.getAttribute("data-source") || "data/berichte.json";
 
-  let posts;
-  try {
-    posts = await fetchJson(src);
-  } catch {
-    return;
+  const [posts, neuigkeit] = await Promise.all([
+    fetchJson(berichteSrc).catch(() => null),
+    fetchJson("data/neuigkeit.json").catch(() => null),
+  ]);
+
+  // ---- Pinned manual entry ----
+  if (neuigkeit && neuigkeit.aktiv && safeText(neuigkeit.titel)) {
+    const url = safeText(neuigkeit.link_url);
+    const el = url ? document.createElement("a") : document.createElement("div");
+    el.className = "news-item news-item--pin";
+    if (url) el.href = url;
+
+    const meta = document.createElement("span");
+    meta.className = "news-item__meta";
+    const metaParts = ["Neuigkeit"];
+    const nDatum = safeText(neuigkeit.datum);
+    if (nDatum) {
+      try {
+        const d = new Date(nDatum);
+        metaParts.push(isNaN(d) ? nDatum : d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" }));
+      } catch { metaParts.push(nDatum); }
+    }
+    meta.textContent = metaParts.join(" · ");
+    el.appendChild(meta);
+
+    const titleEl = document.createElement("span");
+    titleEl.className = "news-item__title";
+    titleEl.textContent = safeText(neuigkeit.titel);
+    el.appendChild(titleEl);
+
+    const text = safeText(neuigkeit.text);
+    if (text) {
+      const textEl = document.createElement("span");
+      textEl.className = "news-item__intro muted";
+      textEl.textContent = text;
+      el.appendChild(textEl);
+    }
+
+    const linkLabel = safeText(neuigkeit.link_label);
+    if (linkLabel && url) {
+      const linkEl = document.createElement("span");
+      linkEl.className = "news-item__link";
+      linkEl.textContent = "→ " + linkLabel;
+      el.appendChild(linkEl);
+    }
+
+    block.appendChild(el);
   }
 
+  // ---- Auto-Berichte ----
   if (!Array.isArray(posts) || !posts.length) return;
 
   posts.slice(0, 3).forEach((post) => {
@@ -235,15 +278,12 @@ async function initNews() {
 
     const meta = document.createElement("span");
     meta.className = "news-item__meta muted";
-
     const parts = [];
     if (datum) {
       try {
         const d = new Date(datum);
         parts.push(isNaN(d) ? datum : d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" }));
-      } catch {
-        parts.push(datum);
-      }
+      } catch { parts.push(datum); }
     }
     if (feld) parts.push(feld);
     meta.textContent = parts.join(" · ");

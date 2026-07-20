@@ -151,6 +151,27 @@ if ($loggedIn && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $flash = ['type' => 'ok', 'text' => 'Bericht veröffentlicht – wird in Kürze live.'];
         }
 
+        // ---- Neuigkeit ------------------------------------------------------
+        elseif ($action === 'neuigkeit') {
+            $data = [
+                'aktiv'      => isset($_POST['aktiv']),
+                'datum'      => trim($_POST['datum'] ?? ''),
+                'titel'      => trim($_POST['titel'] ?? ''),
+                'text'       => trim($_POST['text'] ?? ''),
+                'link_label' => trim($_POST['link_label'] ?? ''),
+                'link_url'   => trim($_POST['link_url'] ?? ''),
+            ];
+            $sha = null;
+            try { $nf = ghGet('data/neuigkeit.json'); $sha = $nf['sha']; } catch (Throwable) {}
+            ghPut(
+                'data/neuigkeit.json',
+                json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+                ($data['aktiv'] ? 'Activate' : 'Update') . ': Neuigkeit',
+                $sha
+            );
+            $flash = ['type' => 'ok', 'text' => 'Neuigkeit gespeichert – wird in Kürze live.'];
+        }
+
         // ---- Galerie-Bild ---------------------------------------------------
         elseif ($action === 'galerie') {
             if (empty($_FILES['bild']['tmp_name'])) {
@@ -212,12 +233,17 @@ if ($loggedIn && $_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // ── Load current data (for pre-filling forms) ────────────────────────────────
-$spieltag = ['date' => '', 'location' => '', 'info' => '', 'confirmed' => true];
-$albums   = [];
+$spieltag  = ['date' => '', 'location' => '', 'info' => '', 'confirmed' => true];
+$neuigkeit = ['aktiv' => false, 'datum' => '', 'titel' => '', 'text' => '', 'link_label' => '', 'link_url' => ''];
+$albums    = [];
 if ($loggedIn) {
     try {
         $sf = ghGet('data/spieltag.json');
         $spieltag = json_decode(ghDecode($sf), true) ?? $spieltag;
+    } catch (Throwable) {}
+    try {
+        $nf = ghGet('data/neuigkeit.json');
+        $neuigkeit = json_decode(ghDecode($nf), true) ?? $neuigkeit;
     } catch (Throwable) {}
     try {
         $gf = ghGet('data/gallery.json');
@@ -481,6 +507,61 @@ a:hover { color: var(--gold); }
         <label for="st_confirmed">Termin bestätigt</label>
       </div>
       <button class="btn btn--primary" type="submit">Spieltag speichern</button>
+    </form>
+  </div>
+</div>
+
+<!-- ══ Aktuelle Neuigkeit ════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section__head" aria-expanded="false" onclick="toggleSection(this)">
+    <span class="icon">📌</span> Aktuelle Neuigkeit
+    <span class="arrow">▾</span>
+  </div>
+  <div class="section__body" hidden>
+    <div class="tip">
+      Optionaler Hinweis auf der Startseite – z.&thinsp;B. für neue Fotos, ein Event oder eine Ankündigung.
+      Nur sichtbar wenn <strong>Aktiv</strong> angehakt ist. Ohne Haken bleibt er versteckt.
+    </div>
+    <form method="post">
+      <input type="hidden" name="_action" value="neuigkeit">
+      <div class="check-field">
+        <input type="checkbox" id="n_aktiv" name="aktiv"
+          <?= ($neuigkeit['aktiv'] ?? false) ? 'checked' : '' ?>>
+        <label for="n_aktiv">Aktiv (auf Startseite anzeigen)</label>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="n_titel">Titel *</label>
+          <input type="text" id="n_titel" name="titel" required
+            placeholder="z. B. Neue Fotos online!"
+            value="<?= htmlspecialchars($neuigkeit['titel'] ?? '') ?>">
+        </div>
+        <div class="field">
+          <label for="n_datum">Datum (optional)</label>
+          <input type="date" id="n_datum" name="datum"
+            value="<?= htmlspecialchars($neuigkeit['datum'] ?? '') ?>">
+        </div>
+      </div>
+      <div class="field">
+        <label for="n_text">Beschreibung (optional)</label>
+        <textarea id="n_text" name="text" rows="2"
+          placeholder="Kurzer Hinweis, der unter dem Titel erscheint…"><?= htmlspecialchars($neuigkeit['text'] ?? '') ?></textarea>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="n_link_label">Link-Text (optional)</label>
+          <input type="text" id="n_link_label" name="link_label"
+            placeholder="z. B. Zur Galerie"
+            value="<?= htmlspecialchars($neuigkeit['link_label'] ?? '') ?>">
+        </div>
+        <div class="field">
+          <label for="n_link_url">Link-URL (optional)</label>
+          <input type="text" id="n_link_url" name="link_url"
+            placeholder="z. B. galerie.html"
+            value="<?= htmlspecialchars($neuigkeit['link_url'] ?? '') ?>">
+        </div>
+      </div>
+      <button class="btn btn--primary" type="submit">Neuigkeit speichern</button>
     </form>
   </div>
 </div>
