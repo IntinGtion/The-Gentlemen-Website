@@ -1165,7 +1165,7 @@ body.modal-open .news-fab {
   }
 
   .slideshow--inline {
-    height: 44vh;
+    display: none;
   }
 
   .shell--fields .right-pane {
