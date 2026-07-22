@@ -745,6 +745,10 @@ body.modal-open .news-fab {
   .patch-grid {
     grid-template-columns: 1fr;
   }
+  .patch-card__img {
+    max-width: min(340px, 85%);
+    max-height: unset;
+  }
 }
 
 .patch-card {
