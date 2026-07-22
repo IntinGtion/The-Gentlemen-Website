@@ -769,8 +769,8 @@ body.modal-open .news-fab {
 
 .patch-card__img {
   width: auto;
-  max-width: 110px;
-  max-height: 110px;
+  max-width: 200px;
+  max-height: 200px;
   height: auto;
   filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
 }
