@@ -1156,7 +1156,7 @@ body.modal-open .news-fab {
 
   .shell--rightflow .right-pane {
     min-height: auto;
-    overflow: visible;
+    overflow-x: hidden;
   }
 
   .shell--rightflow .right-scroll {
