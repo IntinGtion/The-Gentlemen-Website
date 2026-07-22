@@ -2,5 +2,22 @@
   "rotationSeconds": 10,
   "randomize": true,
   "images": [
+    { "src": "resources/team/slides/portrait/portrait_1.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_2.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_3.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_4.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_5.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_7.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_8.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_9.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_10.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_11.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_12.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_13.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_14.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_15.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_16.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_17.webp", "alt": "The Gentlemen – Impression" },
+    { "src": "resources/team/slides/portrait/portrait_18.webp", "alt": "The Gentlemen – Impression" }
   ]
 }
