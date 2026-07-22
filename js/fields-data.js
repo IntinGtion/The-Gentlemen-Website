@@ -127,7 +127,7 @@ window.memberLocations = [
   { name: "Cihan", spielertag: "Dschinni", city: "Simmern/Hunsrück", lat: 49.9833, lng: 7.5167 },
   { name: "Devran", spielertag: "Speedy", city: "Simmern/Hunsrück", lat: 49.9833, lng: 7.5167 },
   { name: "Tugay", spielertag: "Bashking", city: "Simmern/Hunsrück", lat: 49.9833, lng: 7.5167 },
-  { name: "Lucas", spielertag: "Lucas", city: "Cottbus", lat: 51.7607, lng: 14.3329 },
-  { name: "Nico", spielertag: "Nico_OF", city: "Kelkheim", lat: 50.1361, lng: 8.4486 },
+  { name: "Lucas", spielertag: "", city: "Cottbus", lat: 51.7607, lng: 14.3329 },
+  { name: "Nico", spielertag: "", city: "Kelkheim", lat: 50.1361, lng: 8.4486 },
   { name: "Jonas", spielertag: "Bug", city: "Troisdorf", lat: 50.8144, lng: 7.1558 }
 ];
