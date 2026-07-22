@@ -235,7 +235,7 @@ h3 {
   position: relative;
   inset: auto;
   width: 100%;
-  height: clamp(300px, 34vh, 460px);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -273,7 +273,7 @@ h3 {
 }
 
 .slideshow.slideshow--inline.slideshow--compact {
-  height: clamp(500px, 22vh, 300px);
+  aspect-ratio: 21 / 9;
 }
 
 
