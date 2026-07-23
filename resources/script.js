@@ -99,6 +99,17 @@ async function initSpieltag() {
   const info = safeText(data && data.info);
   const confirmed = !!(data && data.confirmed);
 
+  const parsedDate = parseSpieltagDate(date);
+  if (parsedDate) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (parsedDate < today) {
+      const section = block.closest("section") || block;
+      section.hidden = true;
+      return;
+    }
+  }
+
   const dateLabel = date ? formatSpieltag(date) : "Datum folgt";
   const locationLabel = location || "Ort folgt";
 
@@ -136,19 +147,29 @@ async function initSpieltag() {
   block.appendChild(note);
 }
 
-function formatSpieltag(dateStr) {
-  try {
-    const d = new Date(dateStr);
-    if (isNaN(d.getTime())) return dateStr;
-    return d.toLocaleDateString("de-DE", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
-  } catch {
-    return dateStr;
+function parseSpieltagDate(dateStr) {
+  if (!dateStr) return null;
+  const german = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/.exec(dateStr.trim());
+  if (german) {
+    const [, day, month, year] = german;
+    const d = new Date(Number(year), Number(month) - 1, Number(day));
+    return isNaN(d.getTime()) ? null : d;
   }
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return null;
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+function formatSpieltag(dateStr) {
+  const d = parseSpieltagDate(dateStr);
+  if (!d) return dateStr;
+  return d.toLocaleDateString("de-DE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
 }
 
 async function initMemberLinks() {
