@@ -231,12 +231,28 @@
       "spielertag": "Bug",
       "age": 24,
       "airsoftYears": "August 2020",
-      "camo": "OD Green/Black ",
+      "camo": "OD Green/Black",
       "plateCarrier": "Repro Agilite K-0",
       "primary": "HPA Nova / E&L Aks 74n",
       "backup": "AA R17 Ripper",
       "gimmick": "Schmetterling",
       "bio": "Abgelenkt und trotzdem da"
-    }    
+    },
+    {
+      "callsign": "Kohaku",
+      "subtitle": "",
+      "tags": [
+        "Zugprinzessin"
+      ],
+      "photo": "resources/members/Justin.webp",
+      "name": "Justin",
+      "spielertag": "Kohaku",
+      "age": 26,
+      "airsoftYears": "August 2020",
+      "camo": "OD Green",
+      "plateCarrier": "Begadi Platecarrier",
+      "primary": "ASG CZ Scorpion HPA",
+      "backup": "G&G GTP9"
+    }     
   ]
 }
