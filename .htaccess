@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Alte Seiten-URLs (vor Umbenennung am 17.07.2026) dauerhaft auf die neuen umleiten
+RewriteRule ^home\.html$ /start.html [R=301,L]
+RewriteRule ^mitspielen\.html$ /ueber-uns.html [R=301,L]
+RewriteRule ^about\.html$ /mitglieder.html [R=301,L]
+RewriteRule ^fields\.html$ /spielfelder.html [R=301,L]
